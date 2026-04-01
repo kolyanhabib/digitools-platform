@@ -1,16 +1,42 @@
-# React + Vite
+# 🚀 Digitools Platform
+> Discover, explore, and manage popular digital tools in one place.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 📖 Description
+Digitools Platform is a modern React-based web application that allows users to explore a curated list of digital tools, including AI-powered platforms.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Users can view tool details, pricing, and interact with them through a dynamic cart system. The project focuses on clean UI, smooth user experience, and efficient state management.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Technologies Used
+- ⚛️ React.js  
+- 🎨 Tailwind CSS  
+- 🌼 DaisyUI  
+- 📦 JavaScript (ES6+)  
+- 🌐 HTML5 & CSS3  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Features
+- 🔍 Explore various digital tools with detailed information  
+- 🛒 Add to cart, remove items, and clear cart functionality  
+- 📱 Fully responsive design for all devices  
+
+---
+
+## 📂 Project Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/kolyanhabib/digitools-platform.git
+
+# Navigate to project folder
+cd digitools-platform
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
