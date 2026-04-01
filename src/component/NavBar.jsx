@@ -7,12 +7,14 @@ const NavBar = ({ carts, setActiveTab }) => {
 
   return (
     <header className="w-full bg-white shadow-sm sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <h1 className="text-2xl font-bold bg-linear-to-r from-[#4f39f6] to-[#9514fa] bg-clip-text text-transparent">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+        {/* Logo */}
+        <h1 className="text-xl sm:text-2xl font-bold bg-linear-to-r from-[#4f39f6] to-[#9514fa] bg-clip-text text-transparent">
           DigiTools
         </h1>
 
-        <ul className="hidden md:flex items-center gap-8">
+        {/* Desktop Menu */}
+        <ul className="hidden lg:flex items-center gap-6 xl:gap-8 text-sm xl:text-base">
           <li>
             <a href="#" className="hover:text-[#4f39f6]">
               Products
@@ -40,33 +42,134 @@ const NavBar = ({ carts, setActiveTab }) => {
           </li>
         </ul>
 
-        <div className="flex items-center gap-4">
+        {/* Right Side */}
+        <div className="flex items-center gap-3 sm:gap-4">
+          {/* Cart */}
           <div
-            onClick={() => setActiveTab("cart")}
+            onClick={() => {
+              setActiveTab("cart");
+              setOpen(false);
+            }}
             className="relative cursor-pointer"
           >
-            <BsCart2 className="text-lg hover:text-[#4f39f6]" />
+            <BsCart2 className="text-lg sm:text-xl hover:text-[#4f39f6]" />
 
             {carts.length > 0 && (
-              <span className="absolute -top-2 -right-2 bg-[#9514fa] text-white text-xs px-2 py-0.5 rounded-full">
+              <span className="absolute -top-2 -right-2 bg-[#9514fa] text-white text-[10px] sm:text-xs px-1.5 py-0.5 rounded-full">
                 {carts.length}
               </span>
             )}
           </div>
 
-          <button className="hidden md:block hover:text-[#4f39f6] cursor-pointer">
+          {/* Desktop Buttons */}
+          <button className="hidden lg:block text-sm hover:text-[#4f39f6]">
             Login
           </button>
 
-          <button className="hidden md:block px-6 py-2 rounded-full bg-linear-to-r from-[#4f39f6] to-[#9514fa] text-white cursor-pointer">
+          <button className="hidden lg:block px-4 xl:px-6 py-1.5 xl:py-2 text-sm xl:text-base rounded-full bg-linear-to-r from-[#4f39f6] to-[#9514fa] text-white">
             Get Started
           </button>
 
-          {/* Mobile Responsive For Hamburger */}
-          <button className="md:hidden text-2xl" onClick={() => setOpen(!open)}>
+          {/* Mobile Toggle */}
+          <button
+            className="lg:hidden text-2xl cursor-pointer"
+            onClick={() => setOpen(!open)}
+          >
             {open ? <HiX /> : <HiMenu />}
           </button>
         </div>
+      </div>
+
+      {/* Overlay */}
+      {open && (
+        <div
+          className="fixed inset-0 bg-black/30 z-40"
+          onClick={() => setOpen(false)}
+        />
+      )}
+
+      {/* Right Drawer Mobile Menu */}
+      <div
+        className={`fixed top-0 right-0 h-screen w-64 sm:w-72 bg-white z-50 transform transition-transform duration-300 ${
+          open ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        {/* Header */}
+        <div className="flex items-center justify-between px-5 py-4 border-b">
+          <h1 className="text-lg font-bold bg-linear-to-r from-[#4f39f6] to-[#9514fa] bg-clip-text text-transparent">
+            DigiTools
+          </h1>
+
+          <button
+            onClick={() => setOpen(false)}
+            className="text-2xl cursor-pointer"
+          >
+            <HiX />
+          </button>
+        </div>
+
+        {/* Menu */}
+        <ul className="flex flex-col gap-5 p-5 text-sm">
+          <li>
+            <a
+              href="#"
+              onClick={() => setOpen(false)}
+              className="hover:text-[#4f39f6] cursor-pointer"
+            >
+              Products
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              onClick={() => setOpen(false)}
+              className="hover:text-[#4f39f6] cursor-pointer"
+            >
+              Features
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              onClick={() => setOpen(false)}
+              className="hover:text-[#4f39f6] cursor-pointer"
+            >
+              Pricing
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              onClick={() => setOpen(false)}
+              className="hover:text-[#4f39f6] cursor-pointer"
+            >
+              Testimonials
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              onClick={() => setOpen(false)}
+              className="hover:text-[#4f39f6] cursor-pointer"
+            >
+              FAQ
+            </a>
+          </li>
+
+          <button
+            onClick={() => setOpen(false)}
+            className="text-left mt-4 hover:text-[#4f39f6]"
+          >
+            Login
+          </button>
+
+          <button
+            onClick={() => setOpen(false)}
+            className="w-full py-2 rounded-full bg-linear-to-r from-[#4f39f6] to-[#9514fa] text-white"
+          >
+            Get Started
+          </button>
+        </ul>
       </div>
     </header>
   );
