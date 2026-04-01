@@ -8,7 +8,7 @@ import StepsSection from "./component/StepsSection";
 import PricingSection from "./component/PricingSection";
 import CTASection from "./component/CTASection";
 import Footer from "./component/Footer";
-import StatsSection from "./component/StatsSection ";
+import StatsSection from "./component/StatsSection";
 
 function App() {
   const [activeTab, setActiveTab] = useState("model");
