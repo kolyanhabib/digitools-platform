@@ -14,7 +14,7 @@ const NavBar = ({ carts, setActiveTab }) => {
         </h1>
 
         {/* Desktop Menu */}
-        <ul className="hidden lg:flex items-center gap-6 xl:gap-8 text-sm xl:text-base">
+        <ul className="hidden lg:flex items-center gap-6 xl:gap-8 font-medium text-sm xl:text-base">
           <li>
             <a href="#" className="hover:text-[#4f39f6]">
               Products
@@ -52,7 +52,7 @@ const NavBar = ({ carts, setActiveTab }) => {
             }}
             className="relative cursor-pointer"
           >
-            <BsCart2 className="text-lg sm:text-xl hover:text-[#4f39f6]" />
+            <BsCart2 className="text-lg font-medium sm:text-xl hover:text-[#4f39f6]" />
 
             {carts.length > 0 && (
               <span className="absolute -top-2 -right-2 bg-[#9514fa] text-white text-[10px] sm:text-xs px-1.5 py-0.5 rounded-full">
@@ -62,7 +62,7 @@ const NavBar = ({ carts, setActiveTab }) => {
           </div>
 
           {/* Desktop Buttons */}
-          <button className="hidden lg:block text-sm hover:text-[#4f39f6]">
+          <button className="hidden lg:block text-base font-semibold hover:text-[#4f39f6]">
             Login
           </button>
 
@@ -95,7 +95,7 @@ const NavBar = ({ carts, setActiveTab }) => {
         }`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-4 border-b">
+        <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
           <h1 className="text-lg font-bold bg-linear-to-r from-[#4f39f6] to-[#9514fa] bg-clip-text text-transparent">
             DigiTools
           </h1>
@@ -109,7 +109,7 @@ const NavBar = ({ carts, setActiveTab }) => {
         </div>
 
         {/* Menu */}
-        <ul className="flex flex-col gap-5 p-5 text-sm">
+        <ul className="flex flex-col gap-5 p-5 text-sm font-medium">
           <li>
             <a
               href="#"
@@ -158,7 +158,7 @@ const NavBar = ({ carts, setActiveTab }) => {
 
           <button
             onClick={() => setOpen(false)}
-            className="text-left mt-4 hover:text-[#4f39f6]"
+            className="text-left mt-2 hover:text-[#4f39f6]"
           >
             Login
           </button>
